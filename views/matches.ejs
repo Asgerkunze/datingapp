@@ -1,0 +1,13 @@
+<a href="/profile"><button>See Profile</button></a> <a href="/swipe"><button>Start Swiping Now!</button></a>
+<h1>Matches:</h1>
+<% for(const match of matches) {%>
+    <div class="match">
+        <img src="<%= match.photo %>" width="200" height="200">
+        <p>Name: <%= match.name %></p>
+        <p>Age: <%= match.age %></p>
+        <p>Gender: <%= match.gender %></p>
+    </div>
+    <a href="/matches/unmatch/<%= match._id %>"><button>Unmatch</button></a>
+</br>
+</br>
+<% } %>

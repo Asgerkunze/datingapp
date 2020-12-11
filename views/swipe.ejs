@@ -1,0 +1,13 @@
+<a href="/profile"><button>Profile</button></a>
+<div>
+    <div id="picture">
+        <img src="<%= match.photo %>" style="width:500px;height:400px;">
+    </div>
+    <div id="profiletext">
+        <p>name: <%= match.name %></p>
+        <p>age: <%= match.age %></p>
+        <p>gender: <%= match.gender %></p>
+    </div>
+    <a href="/swipe/like/<%= match._id %>"><button>Like</button></a>
+    <a href="/swipe/dislike/<%= match._id %>"><button>Dislike</button></a>
+</div>

@@ -1,0 +1,54 @@
+
+<h1>Welcome <%= user.name %> </h1>
+<p>This is your profile. If you would like to change something do that</p>
+
+<a href="/swipe"><button>Get Swiping!</button></a> <a href="/matches"><button>See matches</button></a>
+<br>
+<img src="<%= user.photo%>" width="400" height="400">
+
+<form action="/users/update" method="POST">
+    <div class="form-group" data-children-count="1">
+        <label for="name">Name</label>
+        <input type="string" class="form-control" id="name" value="<%= user.name%>" name="name">
+    <div class="form-group" data-children-count="1">
+      <label for="email">Email</label>
+      <input type="email" class="form-control" id="email" value="<%= user.email%>" name="email">
+    <div class="form-group" data-children-count="1">
+        <label for="age">Age</label>
+        <input type="string" class="form-control" id="age" value="<%= user.age%>" name="age">
+        <div class="form-group" data-children-count="1">
+            <label for="photo">Photo link</label>
+            <input type="string" class="form-control" id="photo" value="<%= user.photo%>" name="photo">
+    </br>
+        <label>Gender:</label>
+    </br>
+            <% if (user.gender == 'male') { %>
+                <div class="form-check">
+                    <label class="form-group-label" data-children-count="1">
+                        <input type="radio" class="form-group-input" name="gender" checked="" id="gender" value="male">
+                        Male
+                      </label>
+                    </br>
+                      <label class="form-group-label" data-children-count="1">
+                        <input type="radio" class="form-group-input" name="gender" id="gender" value="female">
+                        Female
+                      </label>
+              <% } else {%>
+            <label class="form-group-label" data-children-count="1">
+              <input type="radio" class="form-group-input" name="gender" id="gender" value="male">
+              Male
+            </label>
+        </br>
+        
+            <label class="form-group-label" data-children-count="1">
+                <input type="radio" class="form-group-input" checked="" name="gender" id="gender" value="female">
+                Female
+              </label>
+          <%  } %>
+            </br>
+          <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+<br>
+<input type="button" onclick="location.href='/logout';" value="Log out">
+<br>
+<input type="button" onclick="location.href='/delete';" value="Delete">
